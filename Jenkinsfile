@@ -1,6 +1,10 @@
 pipeline {
     agent any
 
+    environment {
+        PATH="/usr/local/bin:${env.PATH}"
+    }
+
     stages {
         //Primera etapa, para todos los servicios
         stage('Parando los servicios'){
@@ -27,7 +31,7 @@ pipeline {
         stage('Actualizando...'){
             steps {
                 sh ''' 
-                checkout scm
+                git checkout scm
                 '''
             }
         }
