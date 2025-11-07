@@ -30,9 +30,7 @@ pipeline {
         //Bajar la actualizacion
         stage('Actualizando...'){
             steps {
-                sh ''' 
-                git checkout scm
-                '''
+                checkout scm
             }
         }
         //Levantar y desplegar el proyecto
