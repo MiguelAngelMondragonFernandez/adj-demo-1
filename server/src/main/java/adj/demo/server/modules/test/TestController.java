@@ -11,15 +11,15 @@ import java.util.HashMap;
 
 @Controller
 @RequestMapping("/adj-api/test")
-@CrossOrigin(origins = "*", allowedHeaders = "*")
+@CrossOrigin(origins = "*")
 public class TestController {
 
     @GetMapping("")
-    public ResponseEntity<?> getMessage(){
-        HashMap<String, Object> response = new HashMap<>();
-        response.put("data", "OK");
-        response.put("message", "API is working fine");
+    public ResponseEntity<?> getMessage() {
+        HashMap<String, Object> reponse = new HashMap<>();
+        reponse.put("data", "OK");
+        reponse.put("message", "API funcionando");
 
-       return ResponseEntity<>(response, HttpStatus.OK);
+        return new ResponseEntity<>(reponse, HttpStatus.OK);
     }
 }
