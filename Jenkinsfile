@@ -10,7 +10,7 @@ pipeline {
         stage('Parando los servicios'){
             steps {
                 sh ''' 
-                docker compose -p adj-demo-1 down || true
+                docker compose -p adj-demo down || true
                 '''
             }
         }
@@ -37,8 +37,6 @@ pipeline {
         stage('Construyendo y desplegando...'){
             steps {
                 sh ''' 
-                export DOCKER_BUILDKIT=0
-                export COMPOSE_DOCKER_CLI_BUILD=0
                 docker compose up --build -d
                 '''
         }
